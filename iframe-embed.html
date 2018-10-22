@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iframe Embed</title>
+    <!--script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script -->
+    <style>
+        iframe {
+            margin: 0; padding: 0; border: none;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="play-btn">PLAY</button>
+    <div id="video-container"></div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var videoCntr = document.getElementById('video-container');
+            var playBtn = document.getElementById('play-btn');
+            var ifm = document.createElement('iframe');
+
+            ifm.setAttribute('src', 'simple-video.html');
+            ifm.setAttribute('allow', 'autoplay');
+            ifm.setAttribute('scrolling', 'no');
+            ifm.setAttribute('width', 480);
+            ifm.setAttribute('height', 270);
+
+            playBtn.addEventListener('click', function(event) {
+
+                videoCntr.appendChild(ifm);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

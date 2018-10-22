@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Embed</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <style>
+        iframe {
+            margin: 0; padding: 0; border: none;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <button id="play">Play</button>
+    </div>
+    <script>
+
+        $(function(){
+
+            $playBtn = $('#play');
+            $iframe = $('<iframe id="embed-video-1" src="http://local.mlb.com:3000/video/embed/c-2516866083?tid=238068548&siteSection=mlb_articles&playerContext=MLB+News&autoPlay=true&playerId=embed_player_2516866083&customFreewheelProps=%257B%2520%2522topic_id%2522%253A%2520238068548%2520%257D&clickToPlay=true" allow="autoplay;fullscreen" width="480" height="270"></iframe>');
+
+            $playBtn.on('click', function() {
+
+                $('body').append($iframe);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
